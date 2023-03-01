@@ -20,7 +20,7 @@ lines.
 Start the program like
 
 ```
-python3 main.py path_to_file.md
+python3 main.py example.md
 ```
 
 #### Commands
