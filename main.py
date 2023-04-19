@@ -66,7 +66,7 @@ def play(all_cards):
     command = input("Start the game with `go [tag]`:\n")
     res = command.split()
 
-    filter_tag = '#flashcard'
+    filter_tag = None
     if not res or res[0] != 'go':
         print('Invalid command:', command)
         return
@@ -76,7 +76,10 @@ def play(all_cards):
             return
         filter_tag = res[1]
 
-    cards = [card for card in all_cards if card.has_tag(filter_tag)]
+    
+    cards = all_cards
+    if filter_tag:
+        cards = [card for card in all_cards if card.has_tag(filter_tag)]
     random.shuffle(cards)
 
     i = 0
